@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form validation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h2>Form validation</h2>
+        <form>
+            <div class="mb-3 mt-3">
+                <label for="name">Name:</label>
+                <input type="text" class=" form-control" onclick="naim()" id="name" placeholder="Enter name">
+                <span style="color: red;" id="na"></span>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="email">Email:</label>
+                <input type="text" class=" form-control" onclick="emim()" id="email" placeholder="Enter email">
+                <span style="color: red;" id="em"></span>
+            </div>
+            <div class="mb-3">
+                <label for="pwd">Password:</label>
+                <input type="password" class=" form-control" onclick="pasim()" id="password"
+                    placeholder="Enter password">
+                <span style="color: red;" id="pas"></span>
+            </div>
+            <div class="mb-3">
+                <label for="Phone">Phone No:</label>
+                <input type="text" class=" form-control" onclick="numim()" id="number" placeholder="Enter password">
+                <span style="color: red;" id="num"></span>
+            </div>
+            <button type="button" onclick="save()" class=" btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+    save = () => {
+
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let number = document.getElementById('number').value;
+
+        if (name == "") {
+            document.getElementById('na').innerHTML = "name is required";
+        }
+        if (email == "") {
+            document.getElementById('em').innerHTML = "email is required";
+        }
+        if (password == "") {
+            document.getElementById('pas').innerHTML = "password is required";
+        }
+        if (number == "") {
+            document.getElementById('num').innerHTML = "Number is required";
+        }
+
+        else {
+            alert("Youe Data Is Enter");
+        }
+
+        console.log("Name : " + name);
+        console.log("Email : " + email);
+        console.log("password : " + password);
+        console.log("password : " + number);
+
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('password').value = "";
+        document.getElementById('number').value = "";
+
+    }
+
+    naim = () => {
+        document.getElementById('na').style.display = "none";
+    }
+    emim = () => {
+        document.getElementById('em').style.display = "none";
+    }
+    pasim = () => {
+        document.getElementById('pas').style.display = "none";
+    }
+    numim = () => {
+        document.getElementById('num').style.display = "none";
+    }
+
+
+</script>
